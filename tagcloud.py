@@ -41,12 +41,12 @@ def writeCloud(taglist, ranges, outputfile):
     rangeIndex = 0
     for range in ranges:
       url = tag[0].replace(' ', '+')
-      if url not in new_list:
-          new_list.append(url)
-          if (tag[1] >= range[0] and tag[1] <= range[1]):
-            outputf.write("<span class=\"" + rangeStyle[rangeIndex] + "\"><a href=\"" + url + "\">" + tag[0] + "</a></span></br> ")
-            break
-          rangeIndex = rangeIndex + 1
+      # if url not in new_list:
+      #     new_list.append(url)
+      if (tag[1] >= range[0] and tag[1] <= range[1]):
+        outputf.write("<span class=\"" + rangeStyle[rangeIndex] + "\"><a href=\"" + url + "\">" + tag[0] + "</a></span></br> ")
+        break
+      rangeIndex = rangeIndex + 1
   outputf.close()
 
 if __name__ == "__main__":
